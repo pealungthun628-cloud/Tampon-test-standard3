@@ -4,29 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>หน้าหลัก - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header ใส่รูปโลโก้ -->
-    <header>
-        <img src="logo_lannapoly.png" alt="โลโก้วิทยาลัย" class="logo">
-        <h1>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
+    <!-- 1. Top Bar แถบสีเขียวแจ้งเตือน -->
+    <div class="top-announcement">
+        <span>เปิดรับสมัครเรียน ตลอด 24 ชั่วโมง! <a href="#">สมัครเรียน</a></span>
+    </div>
+
+    <!-- 2. Sub-Header แถบสีเทาแสดงข้อมูลติดต่อ & Social Media -->
+    <div class="contact-bar">
+        <div class="contact-container">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> 098 247 3666</span>
+                <span><i class="fa-regular fa-envelope"></i> lannapoly@lannapoly.ac.th</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-line"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Navigation Bar หลัก -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="logo_lannapoly.png" alt="โลโก้วิทยาลัย" class="logo">
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="active">หน้าหลัก</a>
+                <a href="executive.html">ข้อมูลผู้บริหาร</a>
+                <a href="staff.html">ข้อมูลบุคลากร</a>
+                <a href="student.html">ข้อมูลนักเรียน นักศึกษา</a>
+                <a href="academics.html">สาขาวิชาที่เปิดสอน</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html">หน้าหลัก</a>
-        <a href="executive.html">ข้อมูลผู้บริหาร</a>
-        <a href="staff.html">ข้อมูลบุคลากร</a>
-        <a href="student.html">ข้อมูลนักเรียน นักศึกษา</a>
-        <a href="academics.html">สาขาวิชาที่เปิดสอน</a>
-    </nav>
-
-    <!-- Content -->
-    <main>
-        <h2>ยินดีต้อนรับสู่เว็บไซต์วิทยาลัย</h2>
-        <p style="margin-top: 10px;">มุ่งมั่นจัดการศึกษา อาชีวศึกษาให้มีคุณภาพตามมาตรฐานสากล</p>
+    <!-- Content เนื้อหาหน้าหลัก -->
+    <main class="main-content">
+        <div class="welcome-banner">
+            <h2>ยินดีต้อนรับสู่เว็บไซต์วิทยาลัย</h2>
+            <p>มุ่งมั่นจัดการศึกษา อาชีวศึกษาให้มีคุณภาพตามมาตรฐานสากล</p>
+        </div>
         
         <div class="grid-container">
             <div class="card">
