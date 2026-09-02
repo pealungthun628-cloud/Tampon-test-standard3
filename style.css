@@ -325,3 +325,25 @@ footer {
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     border: 1px solid #eee;
 }
+
+/* ปรับแต่ง Grid ให้แสดง 3 คอลัมน์ต่อแถว */
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* กำหนด 3 คอลัมน์ */
+    gap: 30px; /* ระยะห่างระหว่างการ์ด */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* รองรับการแสดงผลบนหน้าจอมือถือและแท็บเล็ต */
+@media (max-width: 992px) {
+    .student-grid {
+        grid-template-columns: repeat(2, 1fr); /* จอกลางปรับเหลือ 2 คอลัมน์ */
+    }
+}
+
+@media (max-width: 600px) {
+    .student-grid {
+        grid-template-columns: 1fr; /* จอมือถือปรับเป็น 1 คอลัมน์ */
+    }
+}
