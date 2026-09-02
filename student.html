@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลนักเรียน นักศึกษา - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .student-section {
+            max-width: 1200px;
+            margin: 30px auto 50px;
+            padding: 0 20px;
+        }
 
+        .student-title {
+            text-align: center;
+            color: #1b5e20;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .student-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #c8e6c9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .student-photo-box {
+            width: 100%;
+            height: 260px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 12px;
+            background-color: #f5f5f5;
+        }
+
+        .student-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .student-info-box {
+            width: 100%;
+            background-color: #f1f8e9;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .info-header {
+            color: #1b5e20;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            text-decoration: underline;
+        }
+
+        .student-name {
+            font-size: 0.95rem;
+            color: #333333;
+            margin-bottom: 6px;
+        }
+
+        .student-phone {
+            font-size: 0.9rem;
+            color: #424242;
+            margin-bottom: 4px;
+        }
+
+        .email-label {
+            color: #1b5e20;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 4px;
+            text-decoration: underline;
+            display: block;
+        }
+
+        .student-email {
+            font-size: 0.85rem;
+            color: #424242;
+            word-break: break-all;
+            margin-bottom: 14px;
+        }
+
+        .btn-student {
+            width: 100%;
+            padding: 8px 0;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #2e7d32;
+            background-color: #4caf50;
+            color: #ffffff;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-student:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement & Contact Bar -->
+    <div class="top-announcement">
+        <span>เปิดรับสมัครเรียน ตลอด 24 ชั่วโมง! <a href="#">สมัครเรียน</a></span>
+    </div>
+
+    <div class="contact-bar">
+        <div class="contact-container">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i>098 247 3666</span>
+                <span><i class="fa-regular fa-envelope"></i> lannapoly@lannapoly.ac.th</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-line"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="logo.png" alt="โลโก้วิทยาลัย" class="logo">
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">หน้าหลัก</a>
+                <a href="executive.html">ข้อมูลผู้บริหาร</a>
+                <a href="staff.html">ข้อมูลบุคลากร</a>
+                <a href="student.html" class="active">ข้อมูลนักเรียน นักศึกษา</a>
+                <a href="academics.html">สาขาวิชาที่เปิดสอน</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Student List Section -->
+    <main class="student-section">
+        <h2 class="student-title">ข้อมูลนักเรียน นักศึกษา</h2>
+
+        <div class="student-grid">
+            
+            <!-- คนที่ 1 -->
+            <div class="student-card">
+                <div class="student-photo-box">
+                    <img src="67219010053.jpg" alt="นางสาวตามพร ลุงทุน" class="student-photo">
+                </div>
+                <div class="student-info-box">
+                    <div class="info-header">ชื่อนักศึกษา</div>
+                    <div class="student-name">นางสาวตามพร ลุงทุน</div>
+                    <div class="student-phone"><strong>โทร :</strong>0804083266</div>
+                    <span class="email-label">Email</span>
+                    <div class="student-email">pealungthun628@gmail.com</div>
+
+                    <button class="btn-student"><i class="fa-solid fa-cloud-arrow-up"></i> อัพโหลดรูปภาพตัวเอง</button>
+                    <button class="btn-student"><i class="fa-solid fa-envelope"></i> ระบุ Email</button>
+                </div>
+            </div>
+
+            <!-- คนที่ 2 -->
+            <div class="student-card">
+                <div class="student-photo-box">
+                    <img src="67219010073.jpg" alt="นางสาวศศินันทา เกิดพงษ์" class="student-photo">
+                </div>
+                <div class="student-info-box">
+                    <div class="info-header">ชื่อนักศึกษา</div>
+                    <div class="student-name">นางสาวศศินันทา เกิดพงษ์</div>
+                    <div class="student-phone"><strong>โทร :</strong>0812345678</div>
+                    <span class="email-label">Email</span>
+                    <div class="student-email">MM.w@gmail.com</div>
+
+                    <button class="btn-student"><i class="fa-solid fa-cloud-arrow-up"></i> อัพโหลดรูปภาพตัวเอง</button>
+                    <button class="btn-student"><i class="fa-solid fa-envelope"></i> ระบุ Email</button>
+                </div>
+            </div>
+
+            <!-- คนที่ 3 -->
+            <div class="student-card">
+                <div class="student-photo-box">
+                    <img src="std3.jpg" alt="นางสาวณิชาภัทร ใจดี" class="student-photo">
+                </div>
+                <div class="student-info-box">
+                    <div class="info-header">ชื่อนักศึกษา</div>
+                    <div class="student-name">นางสาวณิชาภัทร ใจดี</div>
+                    <div class="student-phone"><strong>โทร :</strong> 0898765432</div>
+                    <span class="email-label">Email</span>
+                    <div class="student-email">nichapat.j@gmail.com</div>
+
+                    <button class="btn-student"><i class="fa-solid fa-cloud-arrow-up"></i> อัพโหลดรูปภาพตัวเอง</button>
+                    <button class="btn-student"><i class="fa-solid fa-envelope"></i> ระบุ Email</button>
+                </div>
+            </div>
+
+            <!-- คนที่ 4 -->
+            <div class="student-card">
+                <div class="student-photo-box">
+                    <img src="std4.jpg" alt="นายธนภัทร สุขเสริฐ" class="student-photo">
+                </div>
+                <div class="student-info-box">
+                    <div class="info-header">ชื่อนักศึกษา</div>
+                    <div class="student-name">นายธนภัทร สุขเสริฐ</div>
+                    <div class="student-phone"><strong>โทร :</strong> 0861122334</div>
+                    <span class="email-label">Email</span>
+                    <div class="student-email">thanapat.s@gmail.com</div>
+
+                    <button class="btn-student"><i class="fa-solid fa-cloud-arrow-up"></i> อัพโหลดรูปภาพตัวเอง</button>
+                    <button class="btn-student"><i class="fa-solid fa-envelope"></i> ระบุ Email</button>
+                </div>
+            </div>
+
+            <!-- คนที่ 5 -->
+            <div class="student-card">
+                <div class="student-photo-box">
+                    <img src="std5.jpg" alt="นางสาวพิมลพรรณ รักชาติ" class="student-photo">
+                </div>
+                <div class="student-info-box">
+                    <div class="info-header">ชื่อนักศึกษา</div>
+                    <div class="student-name">นางสาวพิมลพรรณ รักชาติ</div>
+                    <div class="student-phone"><strong>โทร :</strong> 0845566778</div>
+                    <span class="email-label">Email</span>
+                    <div class="student-email">pimonpan.r@gmail.com</div>
+
+                    <button class="btn-student"><i class="fa-solid fa-cloud-arrow-up"></i> อัพโหลดรูปภาพตัวเอง</button>
+                    <button class="btn-student"><i class="fa-solid fa-envelope"></i> ระบุ Email</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่ | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
