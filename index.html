@@ -7,15 +7,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* สไตล์สำหรับ Dropdown และ Hero Banner หน้าหลัก */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            z-index: 100;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: #333333 !important;
+            padding: 10px 16px !important;
+            text-decoration: none;
+            display: block;
+            font-size: 0.88rem !important;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e0f7fa;
+            color: #00b4d8 !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Banner หน้าหลัก */
+        .home-hero-banner {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-bg.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .home-hero-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .btn-banner-apply {
+            background-color: #f57c00;
+            color: #ffffff;
+            padding: 10px 28px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+        }
+
+        .btn-banner-apply:hover {
+            background-color: #e65100;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- 1. Top Bar แถบสีเขียวแจ้งเตือน -->
+    <!-- 1. Top Bar สีเขียว -->
     <div class="top-announcement">
-        <span>เปิดรับสมัครเรียน ตลอด 24 ชั่วโมง! <a href="#">สมัครเรียน</a></span>
+        <span><i class="fa-solid fa-chevron-left" style="font-size: 0.7rem; margin-right: 10px;"></i> เปิดรับสมัครเรียน ตลอด 24 ชั่วโมง! <a href="#">สมัครเรียน</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; margin-left: 10px;"></i></span>
     </div>
 
-    <!-- 2. Sub-Header แถบสีเทาแสดงข้อมูลติดต่อ & Social Media -->
+    <!-- 2. Sub-Header แถบสีเทา แสดงข้อมูลติดต่อ & Social Media -->
     <div class="contact-bar">
         <div class="contact-container">
             <div class="contact-info">
@@ -32,7 +106,7 @@
         </div>
     </div>
 
-    <!-- 3. Navigation Bar หลัก -->
+    <!-- 3. Navigation Bar หลัก ถอดแบบจากรูปภาพ -->
     <header class="main-header">
         <div class="header-container">
             <div class="logo-box">
@@ -40,29 +114,56 @@
             </div>
             <nav class="main-nav">
                 <a href="index.html" class="active">หน้าหลัก</a>
-                <a href="executive.html">ข้อมูลผู้บริหาร</a>
-                <a href="staff.html">ข้อมูลบุคลากร</a>
-                <a href="student.html">ข้อมูลนักเรียน นักศึกษา</a>
-                <a href="academics.html">สาขาวิชาที่เปิดสอน</a>
+                
+                <div class="dropdown">
+                    <a href="#">เกี่ยวกับโปลิฯ <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="executive.html">ข้อมูลผู้บริหาร</a>
+                        <a href="staff.html">ข้อมูลบุคลากร</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#">ข่าวสาร <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">ข่าวประชาสัมพันธ์</a>
+                        <a href="#">ข่าวกิจกรรม</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="academics.html">สาขาที่เปิดสอน <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="academics.html#pvc">ปวช.</a>
+                        <a href="academics.html#pvs">ปวส.</a>
+                    </div>
+                </div>
+
+                <a href="#">ภาพกิจกรรม</a>
+                <a href="student.html">ข้อมูลการสมัครเรียน</a>
+                <a href="#">E-Mail</a>
+                <a href="#">ติดต่อเรา</a>
+                <a href="#">เข้าสู่ระบบ</a>
             </nav>
         </div>
     </header>
 
-    <!-- Content เนื้อหาหน้าหลัก -->
+    <!-- 4. Hero Banner ขนาดใหญ่ตรงตามรูปภาพ -->
+    <section class="home-hero-banner">
+        <h1>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
+        <a href="#" class="btn-banner-apply">สมัครเรียน</a>
+    </section>
+
+    <!-- Content ส่วนเนื้อหาหลัก -->
     <main class="main-content">
-        <div class="welcome-banner">
-            <h2>ยินดีต้อนรับสู่เว็บไซต์วิทยาลัย</h2>
-            <p>มุ่งมั่นจัดการศึกษา อาชีวศึกษาให้มีคุณภาพตามมาตรฐานสากล</p>
-        </div>
-        
         <div class="grid-container">
             <div class="card">
                 <h3>ข่าวประชาสัมพันธ์</h3>
-                <p>เปิดรับสมัครนักศึกษาใหม่ ประจำปีการศึกษา 2026</p>
+                <p>เปิดรับสมัครนักศึกษาใหม่ ประจำปีการศึกษา 2026 เข้าเรียนรอบโควต้าพิเศษ</p>
             </div>
             <div class="card">
                 <h3>กิจกรรมวิทยาลัย</h3>
-                <p>ขอเชิญเข้าร่วมงานสัปดาห์วิทยาศาสตร์และเทคโนโลยี</p>
+                <p>ขอเชิญเข้าร่วมงานเปิดโลกอาชีพและนวัตกรรมอาชีวศึกษา</p>
             </div>
         </div>
     </main>
@@ -71,6 +172,9 @@
     <footer>
         <p>&copy; 2026 วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่ | All Rights Reserved</p>
     </footer>
+
+</body>
+</html>
 
 </body>
 </html>
