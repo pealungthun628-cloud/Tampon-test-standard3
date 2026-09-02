@@ -1,1 +1,406 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สาขาวิชาที่เปิดสอน - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* สไตล์เฉพาะสำหรับหน้าสาขาวิชาที่เปิดสอน */
+        .hero-banner {
+            position: relative;
+            height: 220px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('campus-bg.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+        }
 
+        .hero-banner h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .hero-banner p {
+            font-size: 1.1rem;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .breadcrumb-container {
+            max-width: 1140px;
+            margin: 15px auto 0;
+            padding: 0 20px;
+            font-size: 0.85rem;
+            color: #00b4d8;
+        }
+
+        .academic-container {
+            max-width: 1140px;
+            margin: 20px auto 50px;
+            padding: 0 20px;
+        }
+
+        .section-block {
+            margin-bottom: 50px;
+        }
+
+        .academic-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            border: 1px solid #00b4d8;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        /* ฝั่งซ้าย: รายชื่อสาขาวิชา */
+        .courses-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-header {
+            background-color: #b2ebf2;
+            color: #00838f;
+            padding: 12px 20px;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 30px;
+            padding: 24px 20px;
+            background-color: #f8fafc;
+            flex-grow: 1;
+        }
+
+        .course-item {
+            font-size: 0.9rem;
+        }
+
+        .course-name-th {
+            font-weight: 600;
+            color: #333333;
+            margin-bottom: 2px;
+        }
+
+        .course-name-en {
+            font-size: 0.8rem;
+            color: #666666;
+        }
+
+        .btn-detail {
+            background-color: #26a69a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            transition: background 0.2s;
+        }
+
+        .btn-detail:hover {
+            background-color: #00897b;
+        }
+
+        /* ฝั่งขวา: คุณสมบัติ & เอกสารสมัคร */
+        .sidebar-panel {
+            padding: 20px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-left: 1px solid #e0e0e0;
+        }
+
+        .box-qualification, .box-documents {
+            border: 1px solid #b2dfdb;
+            border-radius: 4px;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+
+        .box-title {
+            color: #00897b;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .box-qualification p {
+            font-size: 0.82rem;
+            color: #555555;
+            margin-bottom: 12px;
+        }
+
+        .btn-apply {
+            background-color: #1b5e20;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+
+        .doc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.8rem;
+            color: #444444;
+        }
+
+        .doc-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .doc-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .highlight-red {
+            color: #d32f2f;
+        }
+
+        @media (max-width: 850px) {
+            .academic-layout {
+                grid-template-columns: 1fr;
+            }
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement & Contact Bar -->
+    <div class="top-announcement">
+        <span>เปิดรับสมัครเรียน ตลอด 24 ชั่วโมง! <a href="#">สมัครเรียน</a></span>
+    </div>
+
+    <div class="contact-bar">
+        <div class="contact-container">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> 098 247 3666</span>
+                <span><i class="fa-regular fa-envelope"></i> lannapoly@lannapoly.ac.th</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-line"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="logo.png" alt="โลโก้วิทยาลัย" class="logo">
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">หน้าหลัก</a>
+                <a href="executive.html">ข้อมูลผู้บริหาร</a>
+                <a href="staff.html">ข้อมูลบุคลากร</a>
+                <a href="student.html">ข้อมูลนักเรียน นักศึกษา</a>
+                <a href="academics.html" class="active">สาขาวิชาที่เปิดสอน</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner หัวข้อหลัก -->
+    <div class="hero-banner">
+        <h1>สาขาวิชาที่เปิดสอน</h1>
+        <p>Vocational & High Vocational Certificate Programs</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="academic-container">
+        
+        <!-- ================= SECTION 1: ปวช. ================= -->
+        <div class="section-block" id="pvc">
+            <div class="academic-layout">
+                <div class="courses-panel">
+                    <div class="panel-header">สาขาที่เปิดสอน ปวช. / เอกสารการสมัคร</div>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <div class="course-name-th">สาขางานยานยนต์</div>
+                            <div class="course-name-en">(Auto Mechanical Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขายานยนต์ไฟฟ้า</div>
+                            <div class="course-name-en">(Electric Vehicle)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาช่างไฟฟ้ากำลัง</div>
+                            <div class="course-name-en">(Electrical Power Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาช่างก่อสร้าง</div>
+                            <div class="course-name-en">(Construction Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาสถาปัตยกรรม</div>
+                            <div class="course-name-en">(Architectural Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาเทคโนโลยีสารสนเทศ</div>
+                            <div class="course-name-en">(Information Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาการบัญชี</div>
+                            <div class="course-name-en">(Accounting)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาการตลาด</div>
+                            <div class="course-name-en">(Marketing)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาธุรกิจดิจิทัล</div>
+                            <div class="course-name-en">(Digital Business Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาการท่องเที่ยว</div>
+                            <div class="course-name-en">(Tourism)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาการโรงแรม</div>
+                            <div class="course-name-en">(Hotel Management)</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-detail">รายละเอียดทั้งหมด / โควต้า</a>
+                </div>
+
+                <div class="sidebar-panel">
+                    <div class="box-qualification">
+                        <div class="box-title">» คุณสมบัติผู้สมัคร ปวช.</div>
+                        <p>สำเร็จการศึกษาระดับประกาศนียบัตร (ปวช.) หรือ ม.3 หรือเทียบเท่า</p>
+                        <a href="#" class="btn-apply">สมัครเลย</a>
+                    </div>
+                    <div class="box-documents">
+                        <div class="box-title">📄 เอกสารการสมัคร</div>
+                        <ul class="doc-list">
+                            <li>ปพ.1 ฉบับจริงพร้อมสำเนา <span class="highlight-red">(นำมาในวันมอบตัว)</span></li>
+                            <li>ใบรับรอง <span class="highlight-red">(นำมาในวันมอบตัว)</span></li>
+                            <li>สำเนาทะเบียนบ้าน นักเรียน , บิดา , มารดา</li>
+                            <li>สำเนาบัตรประจำตัวประชาชน นักเรียน , บิดา , มารดา</li>
+                            <li>สำเนาสูติบัตร</li>
+                            <li>รูปถ่ายขนาด 1 หรือ 2 นิ้ว</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SECTION 2: ปวส. ================= -->
+        <div class="section-block" id="pvs">
+            <div class="academic-layout">
+                <div class="courses-panel">
+                    <div class="panel-header">สาขาที่เปิดสอน ปวส. / เอกสารการสมัคร</div>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <div class="course-name-th">สาขางานยานยนต์</div>
+                            <div class="course-name-en">(Auto Mechanical Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขายานยนต์ไฟฟ้า</div>
+                            <div class="course-name-en">(Electric Vehicle)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาช่างไฟฟ้ากำลัง</div>
+                            <div class="course-name-en">(Electrical Power Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาช่างก่อสร้าง</div>
+                            <div class="course-name-en">(Construction Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาสถาปัตยกรรม</div>
+                            <div class="course-name-en">(Architectural Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาเทคโนโลยีสารสนเทศ</div>
+                            <div class="course-name-en">(Information Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาการบัญชี</div>
+                            <div class="course-name-en">(Accounting)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาการตลาด</div>
+                            <div class="course-name-en">(Marketing)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาธุรกิจดิจิทัล</div>
+                            <div class="course-name-en">(Digital Business Technology)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาการท่องเที่ยว</div>
+                            <div class="course-name-en">(Tourism)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name-th">สาขาการโรงแรม</div>
+                            <div class="course-name-en">(Hotel Management)</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-detail">รายละเอียดทั้งหมด / โควต้า</a>
+                </div>
+
+                <div class="sidebar-panel">
+                    <div class="box-qualification">
+                        <div class="box-title">» คุณสมบัติผู้สมัคร ปวส.</div>
+                        <p>สำเร็จการศึกษา ปวช. ม.6 หรือเทียบเท่า</p>
+                        <a href="#" class="btn-apply">สมัครเลย</a>
+                    </div>
+                    <div class="box-documents">
+                        <div class="box-title">📄 เอกสารการสมัคร</div>
+                        <ul class="doc-list">
+                            <li>ปพ.1 ฉบับจริงพร้อมสำเนา <span class="highlight-red">(นำมาในวันมอบตัว)</span></li>
+                            <li>ใบรับรอง <span class="highlight-red">(นำมาในวันมอบตัว)</span></li>
+                            <li>สำเนาทะเบียนบ้าน นักเรียน , บิดา , มารดา</li>
+                            <li>สำเนาบัตรประจำตัวประชาชน นักเรียน , บิดา , มารดา</li>
+                            <li>สำเนาสูติบัตร</li>
+                            <li>รูปถ่ายขนาด 1 หรือ 2 นิ้ว</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่ | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
