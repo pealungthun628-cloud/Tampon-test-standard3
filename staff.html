@@ -3,53 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ข้อมูลบุคลากร</title>
+    <title>ข้อมูลบุคลากร - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <img src="logo.png" alt="โลโก้วิทยาลัย" class="logo">
-        <h1>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
-    </header>
-    <nav>
-        <a href="index.html">หน้าหลัก</a>
-        <a href="executive.html">ข้อมูลผู้บริหาร</a>
-        <a href="staff.html">ข้อมูลบุคลากร</a>
-        <a href="student.html">ข้อมูลนักเรียน นักศึกษา</a>
-        <a href="academics.html">สาขาวิชาที่เปิดสอน</a>
-    </nav>
-    <main>
-        <h2>ข้อมูลบุคลากร</h2>
-        <div class="grid-container">
-            <div class="card">
-                <img src="10402.jpg" alt="มยุลีย์ พงษ์บุพศิริกุล" class="profile-img">
-                <h4>นางสาวมยุลีย์ พงษ์บุพศิริกุล</h4>
-                <p>หัวหน้าสาขาวิชาเทคโนโลยีสารสนเทศ</p>
-            </div>
-            <div class="card">
-                <img src="10409.jpg" alt="สวิตตา ประทุม" class="profile-img">
-                <h4>นางสาวสวิตตา ประทุม</h4>
-                <p>ครูเทคโนโลยีสารสนเทศ</p>
-            </div>
-            <div class="card">
-                <img src="03003.jpg" alt="ธรนินทร์ นิ่มเนตร" class="profile-img">
-                <h4>นายธรนินทร์ นิ่มเนตร</h4>
-                <p>ครูไฟฟ้าและอิเล็กทรอนิกส์</p>
-            </div>
-            <div class="card">
-                <img src="07238.jpg" alt="ธนกฤต โพธิ์แจ้ง" class="profile-img">
-                <h4>นายธนกฤต โพธิ์แจ้ง</h4>
-                <p>ครูแผนกสามัญ</p>
-            </div>
-            <div class="card">
-                <img src="07237.jpg" alt="วีระพร เฉลิมคราม" class="profile-img">
-                <h4>นางวีระพร เฉลิมคราม</h4>
-                <p>ครูแผนกสามัญ</p>
+        <div class="header-brand">
+            <img src="logo.png" alt="โลโก้วิทยาลัย" class="logo-img">
+            <div>
+                <div class="brand-title">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</div>
             </div>
         </div>
-    </main>
+        <nav>
+            <a href="index.html">หน้าหลัก</a>
+            <a href="executive.html">ข้อมูลผู้บริหาร</a>
+            <a href="staff.html" class="active">ข้อมูลบุคลากร</a>
+            <a href="student.html">ข้อมูลนักเรียน นักศึกษา</a>
+            <a href="academics.html">สาขาวิชาที่เปิดสอน</a>
+        </nav>
+    </header>
+
+    <div class="app-container">
+        <!-- เมนูด้านข้าง (Sidebar) -->
+        <sidebar>
+            <div class="sidebar-title">รูปภาพบุคลากร</div>
+            
+            <div class="sidebar-section">
+                <div class="section-header">สายสอน</div>
+                <a href="#" class="sidebar-link active">แผนกสามัญ</a>
+                <a href="#" class="sidebar-link">เทคนิคเครื่องกล</a>
+                <a href="#" class="sidebar-link">ไฟฟ้าและอิเล็กทรอนิกส์</a>
+                <a href="#" class="sidebar-link">เทคโนโลยีสารสนเทศ</a>
+                <a href="#" class="sidebar-link">บริหารธุรกิจ</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-header">ส่งเสริมการศึกษา</div>
+                <a href="#" class="sidebar-link">งานทางการศึกษาและสื่อสารองค์กร</a>
+                <a href="#" class="sidebar-link">กลุ่มงานบัญชี</a>
+                <a href="#" class="sidebar-link">กลุ่มงานบริหาร</a>
+            </div>
+        </sidebar>
+
+        <!-- การ์ดบุคลากร 5 ท่าน -->
+        <main>
+            <h2>ข้อมูลบุคลากร</h2>
+
+            <div class="staff-grid">
+                
+                <!-- ท่านที่ 1 -->
+                <div class="staff-card">
+                    <div class="avatar-frame">
+                        <img src="10402.jpg" alt="นางสาวมยุลีย์ พงษ์บุพศิริกุล" class="avatar-img">
+                    </div>
+                    <div class="info-box">
+                        <div class="name-en">MissMayulee Chailangka</div>
+                        <div class="name-th">นางสาวมยุลีย์ พงษ์บุพศิริกุล</div>
+                        <div class="position">หัวหน้าสาขาวิชาเทคโนโลยีสารสนเทศ</div>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 2 -->
+                <div class="staff-card">
+                    <div class="avatar-frame">
+                        <img src="10409.jpg" alt="นางสาวสวิตตา ประทุม" class="avatar-img">
+                    </div>
+                    <div class="info-box">
+                        <div class="name-en">MissSawitta Pratoom</div>
+                        <div class="name-th">นางสาวสวิตตา ประทุม</div>
+                        <div class="position">ครูเทคโนโลยีสารสนเทศ</div>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 3 -->
+                <div class="staff-card">
+                    <div class="avatar-frame">
+                        <img src="03003.jpg" alt="นายธรนินทร์ นิ่มเนตร" class="avatar-img">
+                    </div>
+                    <div class="info-box">
+                        <div class="name-en">Mr.Thornin Nimnet</div>
+                        <div class="name-th">นายธรนินทร์ นิ่มเนตร</div>
+                        <div class="position">ครูไฟฟ้าและอิเล็กทรอนิกส์</div>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 4 -->
+                <div class="staff-card">
+                    <div class="avatar-frame">
+                        <img src="07238.jpg" alt="นายธนกฤต โพธิ์แจ้ง" class="avatar-img">
+                    </div>
+                    <div class="info-box">
+                        <div class="name-en">Mr.Tanakit Prochaeng</div>
+                        <div class="name-th">นายธนกฤต โพธิ์แจ้ง</div>
+                        <div class="position">ครูแผนกสามัญ</div>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 5 -->
+                <div class="staff-card">
+                    <div class="avatar-frame">
+                        <img src="07237.jpg" alt="นางวีระพร เฉลิมคราม" class="avatar-img">
+                    </div>
+                    <div class="info-box">
+                        <div class="name-en">Mrs.Weeraporn Chalermkram</div>
+                        <div class="name-th">นางวีระพร เฉลิมคราม</div>
+                        <div class="position">ครูแผนกสามัญ</div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
     <footer>
         <p>&copy; 2026 วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
     </footer>
+
 </body>
 </html>
