@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลผู้บริหาร - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* สไตล์เฉพาะสำหรับหน้าข้อมูลผู้บริหาร (Executive Card UI) */
+        .exec-section-title {
+            text-align: center;
+            color: #0284c7;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 36px 0 20px 0;
+        }
 
+        .exec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .exec-grid-center {
+            display: flex;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .exec-grid-center .exec-card {
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .exec-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Banner ด้านบนของการ์ด */
+        .exec-banner {
+            height: 120px;
+            background-image: url('building-bg.jpg'); /* ภาพอาคารวิทยาลัย */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* ส่วนเนื้อหาล่างของการ์ด */
+        .exec-body {
+            position: relative;
+            padding: 20px;
+            min-height: 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f9fafb;
+        }
+
+        .exec-info {
+            width: 55%; /* เว้นพื้นที่ฝั่งขวาไว้ให้รูปบุคลากร */
+        }
+
+        .exec-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .exec-role {
+            font-size: 0.85rem;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* รูปถ่ายผู้บริหารที่วางซ้อนเหลื่อม Banner (ด้านขวา) */
+        .exec-photo {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            width: 125px;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            background-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-brand">
+            <img src="logo_lannapoly.png" alt="โลโก้วิทยาลัย" class="logo-img">
+            <div>
+                <div class="brand-title">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</div>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">หน้าหลัก</a>
+            <a href="executive.html" class="active">ข้อมูลผู้บริหาร</a>
+            <a href="staff.html">ข้อมูลบุคลากร</a>
+            <a href="student.html">ข้อมูลนักเรียน นักศึกษา</a>
+            <a href="academics.html">สาขาวิชาที่เปิดสอน</a>
+        </nav>
+    </header>
+
+    <main style="padding: 40px 20px; background-color: #eef2f7; min-height: 85vh;">
+        
+        <!-- หมวดที่ 1: ผู้ทรงคุณวุฒิ -->
+        <h2 class="exec-section-title">ผู้ทรงคุณวุฒิ</h2>
+        <div class="exec-grid">
+            
+            <!-- ท่านที่ 1 -->
+            <div class="exec-card">
+                <div class="exec-banner"></div>
+                <div class="exec-body">
+                    <div class="exec-info">
+                        <div class="name-th exec-name">นายจีระพันธ์ กิตติบุตร</div>
+                        <div class="exec-role">👤 ผู้ทรงคุณวุฒิ</div>
+                    </div>
+                    <img src="1-B0aDhrdA.gif" alt="นายจีระพันธ์ กิตติบุตร" class="exec-photo">
+                </div>
+            </div>
+
+            <!-- ท่านที่ 2 -->
+            <div class="exec-card">
+                <div class="exec-banner"></div>
+                <div class="exec-body">
+                    <div class="exec-info">
+                        <div class="name-th exec-name">นายวิทยา ใจวิถี</div>
+                        <div class="exec-role">👤 ผู้ทรงคุณวุฒิ</div>
+                    </div>
+                    <img src="1_2-Da58X3DG.gif" alt="นายวิทยา ใจวิถี" class="exec-photo">
+                </div>
+            </div>
+
+            <!-- ท่านที่ 3 -->
+            <div class="exec-card">
+                <div class="exec-banner"></div>
+                <div class="exec-body">
+                    <div class="exec-info">
+                        <div class="name-th exec-name">รศ.ดร.จารุณี ทิพยมณฑล</div>
+                        <div class="exec-role">👤 ผู้ทรงคุณวุฒิ</div>
+                    </div>
+                    <img src="1_6-BLEz5SgE.gif" alt="รศ.ดร.จารุณี ทิพยมณฑล" class="exec-photo">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- หมวดที่ 2: ผู้รับใบอนุญาต / ผู้จัดการ -->
+        <h2 class="exec-section-title">ผู้รับใบอนุญาต / ผู้จัดการ</h2>
+        <div class="exec-grid-center">
+            
+            <div class="exec-card">
+                <div class="exec-banner"></div>
+                <div class="exec-body">
+                    <div class="exec-info">
+                        <div class="name-th exec-name">นายสมมิทธิ์ ทิพยมณฑล</div>
+                        <div class="exec-role">👤 ผู้รับใบอนุญาต / ผู้จัดการ</div>
+                    </div>
+                    <img src="00103.jpg" alt="นายสมมิทธิ์ ทิพยมณฑล" class="exec-photo">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- หมวดที่ 3: ผู้อำนวยการ / ผู้แทนครู -->
+        <h2 class="exec-section-title">ผู้อำนวยการ / ผู้แทนครู</h2>
+        <div class="exec-grid">
+            
+            <!-- ท่านที่ 1 -->
+            <div class="exec-card">
+                <div class="exec-banner"></div>
+                <div class="exec-body">
+                    <div class="exec-info">
+                        <div class="name-th exec-name">นายฉลวย พันธ์ทอง</div>
+                        <div class="exec-role">👤 ผู้อำนวยการ</div>
+                    </div>
+                    <img src="00111.jpg" alt="นายฉลวย พันธ์ทอง" class="exec-photo">
+                </div>
+            </div>
+
+            <!-- ท่านที่ 2 -->
+            <div class="exec-card">
+                <div class="exec-banner"></div>
+                <div class="exec-body">
+                    <div class="exec-info">
+                        <div class="name-th exec-name">นายศิรภพ เจริญกุศล</div>
+                        <div class="exec-role">👤 ผู้แทนครู</div>
+                    </div>
+                    <img src="00107.jpg" alt="นายศิรภพ เจริญกุศล" class="exec-photo">
+                </div>
+            </div>
+
+            <!-- ท่านที่ 3 -->
+            <div class="exec-card">
+                <div class="exec-banner"></div>
+                <div class="exec-body">
+                    <div class="exec-info">
+                        <div class="name-th exec-name">นางวิมพ์ภากุล เตรียมสันติภาพ</div>
+                        <div class="exec-role">👤 ผู้แทนครู</div>
+                    </div>
+                    <img src="00301.jpg" alt="นางวิมพ์ภากุล เตรียมสันติภาพ" class="exec-photo">
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
+    </footer>
+
+</body>
+</html>
