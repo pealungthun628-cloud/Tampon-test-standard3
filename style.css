@@ -329,7 +329,7 @@ footer {
 /* ปรับแต่ง Grid ให้แสดง 3 คอลัมน์ต่อแถว */
 .student-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* กำหนด 3 คอลัมน์ */
+    grid-template-columns: repeat(5, 1fr); /* กำหนด 3 คอลัมน์ */
     gap: 30px; /* ระยะห่างระหว่างการ์ด */
     max-width: 1200px;
     margin: 0 auto;
@@ -346,4 +346,18 @@ footer {
     .student-grid {
         grid-template-columns: 1fr; /* จอมือถือปรับเป็น 1 คอลัมน์ */
     }
+}
+
+.home-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    /* เปลี่ยน 'banner-bg.jpg' เป็นชื่อไฟล์รูปของคุณ */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('banner-bg.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
 }
